@@ -99,8 +99,10 @@ def main():
     connect_to_server()
     key = load_key()
     encrypt(fileName, key)
-    send_file()
-    decrypt(fileName, key)
+    try:
+        send_file()
+    finally:
+        decrypt(fileName, key)
 
 
 if __name__ == "__main__":
